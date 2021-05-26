@@ -1,0 +1,34 @@
+//represent a Employee that gets paid by the hour
+public class Hourly extends Employee
+{
+protected int hoursWorked;
+
+//sets 	up this hourly employee using the specified information.
+
+public Hourly(String eName,String eAddress,String ePhone,String socSecNumber, double rate)
+{
+	super(eName,eAddress,ePhone,socSecNumber,rate);
+	hoursWorked =0;
+	}
+//adds specific number of hours to this employee's accumulated hours.
+
+public void addHours (int moreHours) {
+	hoursWorked += moreHours;
+}
+//computes and returns 	the pay for this houly employee.
+
+public double pay() {
+	double payment =payRate * hoursWorked;
+	
+	hoursWorked=0;
+	
+	return payment;
+}
+//returns information about this hourly employee.
+public String toString() {
+	String result = super.toString();
+	result +="\nCurrent hours : " + hoursWorked;
+	
+	return result;
+}
+}
